@@ -40,9 +40,10 @@ setup: ## install dependencies
 	@echo "🐳 $@"
 	# TODO(stevvooe): Install these from the vendor directory
 	# install golangci-lint version 1.17.1 to ./bin/golangci-lint
-	@curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.17.1
-	@go get -u github.com/lk4d4/vndr
-	@go get -u github.com/stevvooe/protobuild
+	@GO111MODULE=on go get github.com/stevvooe/protobuild
+        # @curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.17.1
+	# @go get -u github.com/lk4d4/vndr
+	# @go get -u github.com/stevvooe/protobuild
 
 .PHONY: generate
 generate: protos
